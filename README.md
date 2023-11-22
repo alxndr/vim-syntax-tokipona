@@ -18,6 +18,11 @@ In your editor, enable syntax highlighting and then:
 
 <a href="https://i.imgur.com/TfkF8zt.png" title="full-size screenshot (1890×1808 px)"><img src="https://i.imgur.com/TfkF8ztl.png" alt="screenshot" width="400" /></a>
 
+## Related
+
+ I recommend also using [/dev/urandom's Toki Pona vim spellcheck](https://gitlab.com/dev_urandom/toki-pona-vim-spellcheck).
+
+
 [toki pona]: https://tokipona.org
 [vim]: https://www.vim.org/
 [NeoVim]: https://neovim.io
