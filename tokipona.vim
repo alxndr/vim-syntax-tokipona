@@ -5,19 +5,18 @@
 
 let b:current_syntax = "tokipona"
 
-" ... first define the most general things
-syntax   match tpWord '[A-Za-z]\+'
+" `la`-phrases
+syntax match tpPrenex _[,\.:!?][^,\.:!?]\+\<la\>_ms=s+1
+syntax match tpPrenexLineStart _^[^,.:!?]\+\<la\>_
 
-" ... then define regions
-syntax   match tpPrenex _[,\.:!?][^,\.:!?]\+\s\+la\>_ms=s+1
-syntax   match tpPrenexLineStart _^[^,.:!?]\+\s\+la\>_
+" arbitrary headnouns + names
+syntax match tpNamesMatch '\<[a-z]\+\s\+\(\<[A-Z][A-Za-z]\+\>\s*\)\+'
 
-" ... then match arbitrary headnouns + names
-syntax   match tpNamesMatch '\<[a-z]\+\s\+\(\<[A-Z][A-Za-z]\+\>\s*\)\+'
+" question in the form of `X ala X`
+syntax match tpInterrogativesMatch '\<\([a-z]\+\) ala \1\>'
 
-" ... then define more specific terms
+" keywords
 syntax keyword tpInterrogatives anu seme
-syntax   match tpInterrogativesMatch '\<\([a-z]\+\) ala \1\>'
 syntax keyword tpNounParticles en pi
 syntax keyword tpModifiers kin taso
 syntax keyword tpPrepositions kama ken kepeken lon sama tan tawa
@@ -36,6 +35,6 @@ highlight default link tpInterrogatives      Special
 highlight default link tpInterrogativesMatch Special
 highlight default link tpQuantifier          Type
 highlight default link tpPrepositions        Type
-" highlight default link tpNonLetters          Comment
+highlight default link tpNonLetters          Comment
 highlight default link tpVerbParticles       Constant
 highlight default link tpModifiers           String
